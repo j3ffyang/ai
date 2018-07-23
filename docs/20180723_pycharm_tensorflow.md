@@ -1,7 +1,7 @@
 # Integrate TensorFlow (and Keras) with PyCharm
 
 #### Document Objective
-- Use python3 and pip3
+- Use ```python3``` and ```pip3```
 - Install and load TensorFlow in PyCharm
 
 ## Install PyCharm
