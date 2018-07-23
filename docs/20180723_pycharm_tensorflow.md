@@ -24,6 +24,12 @@ sudo pip3 install --upgrade tensorflow
 sudo pip3 install keras
 ```
 
+## Install PyTorch (through proxy)
+```
+export https_proxy=http://IP:3128
+sudo -E pip3 install torch torchvision
+```
+
 > You might need to quit then restart PyCharm to pick and load the new packages.
 
 ## Change interpreter in PyCharm to load TensorFlow and Keras
