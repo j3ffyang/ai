@@ -36,3 +36,18 @@ sudo -E pip3 install torch torchvision
 From PyCharm, File > Settings > Project Interpreter > change ```/usr/bin/python3.6``` in Project Interpreter
 
 <img src="../imgs/20180723_pycharm_interpreter.png" width="700px">
+
+## PyCharm repo for Fedora under ```/etc/yum.repos.d```
+
+```
+[phracek-PyCharm]
+name=Copr repo for PyCharm owned by phracek
+baseurl=https://copr-be.cloud.fedoraproject.org/results/phracek/PyCharm/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://copr-be.cloud.fedoraproject.org/results/phracek/PyCharm/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
+```
