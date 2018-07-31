@@ -74,6 +74,7 @@ cat name.json
 "Elijah",
 ...
 ]
+```
 
 ## Generate user_id and password then send them out
 
