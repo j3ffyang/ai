@@ -6,7 +6,7 @@
 
 ## Install PyCharm
 - Preference to ```python3``` and ```pip3```
-  ```
+  ```shell
   wget https://bootstrap.pypa.io/get-pip.py
   sudo python3 get-pip.py
   ```
@@ -15,17 +15,17 @@
 - Untar it in home dir
 
 ## Install TensorFlow
-```
+```shell
 sudo pip3 install --upgrade tensorflow
 ```
 
 ## Install Keras
-```
+```shell
 sudo pip3 install keras
 ```
 
 ## Install PyTorch (through proxy)
-```
+```shell
 export https_proxy=http://IP:3128
 sudo -E pip3 install torch torchvision
 ```
@@ -39,7 +39,7 @@ From PyCharm, File > Settings > Project Interpreter > change ```/usr/bin/python3
 
 ## PyCharm repo for Fedora under ```/etc/yum.repos.d```
 
-```
+```shell
 [phracek-PyCharm]
 name=Copr repo for PyCharm owned by phracek
 baseurl=https://copr-be.cloud.fedoraproject.org/results/phracek/PyCharm/fedora-$releasever-$basearch/
