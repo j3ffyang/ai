@@ -8,7 +8,7 @@ Credit > https://stackoverflow.com/questions/19414093/how-to-xor-binary-with-pyt
 
 ## Code
 
-```
+```python
 a = input("Give the 1st binary string: ")
 b = input("Give the 2nd binary string: ")
 
