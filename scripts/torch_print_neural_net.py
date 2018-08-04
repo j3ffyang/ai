@@ -24,28 +24,4 @@ class Net(torch.nn.Module):
         return x
 
 net = Net(1, 10, 1)
-# print(net)
-
-plt.ion()
-plt.show()
-
-optimizer = torch.optim.SGD(net.parameters(), lr=0.5)
-loss_func = torch.nn.MSELoss()
-
-for t in range(100):
-    prediction = net(x)
-
-    loss = loss_func(prediction, y)
-
-    optimizer.zero_grad()
-    loss.backward()
-    optimizer.step()
-    if t % 5 == 0:
-        plt.cla()
-        plt.scatter(x.data.numpy(), y.data.numpy())
-        plt.plot(x.data.numpy(), prediction.data.numpy(), 'r-', lw=5)
-        plt.text(0.5, 0, 'Loss=%.4f' % loss.data.numpy(), fontdict={'size': 20, 'color': 'red'})
-        plt.pause(0.2)
-
-plt.ioff()
-plt.show()
+print(net)

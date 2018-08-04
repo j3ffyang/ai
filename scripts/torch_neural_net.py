@@ -32,7 +32,7 @@ plt.show()
 optimizer = torch.optim.SGD(net.parameters(), lr=0.5)
 loss_func = torch.nn.MSELoss()
 
-for t in range(100):
+for t in range(200):
     prediction = net(x)
 
     loss = loss_func(prediction, y)
