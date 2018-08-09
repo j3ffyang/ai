@@ -13,4 +13,3 @@ else:
     print("nm")
 
 print(re.findall(pattern, "eggspamsausagespam"))
-
