@@ -2,3 +2,4 @@ site-packages
 venv
 lib64
 summary_log
+.idea
