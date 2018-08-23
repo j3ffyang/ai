@@ -1,3 +1,5 @@
+## reference > https://towardsdatascience.com/predicting-the-survival-of-titanic-passengers-30870ccc7e8
+
 import numpy as np
 
 # data processing
@@ -50,3 +52,30 @@ ax = sns.distplot(men[men['Survived']==1].Age.dropna(), bins=18, label = survive
 ax = sns.distplot(men[men['Survived']==0].Age.dropna(), bins=40, label = not_survived, ax = axes[1], kde = False)
 ax.legend()
 _ = ax.set_title('Male')
+plt.show()
+
+# 3. Embarked, Pclass and Sex:
+FacetGrid = sns.FacetGrid(train_df, row='Embarked', height=4.5, aspect=1.6)
+FacetGrid.map(sns.pointplot, 'Pclass', 'Survived', 'Sex', palette=None,  order=None, hue_order=None )
+FacetGrid.add_legend()
+plt.show()
+
+# 4. Pclass:
+sns.barplot(x='Pclass', y='Survived', data=train_df)
+plt.show()
+
+grid = sns.FacetGrid(train_df, col='Survived', row='Pclass', height=2.2, aspect=1.6)
+grid.map(plt.hist, 'Age', alpha=.5, bins=20)
+grid.add_legend();
+plt.show()
+
+# 5. SibSp and Parch:
+data = [train_df, test_df]
+for dataset in data:
+    dataset['relatives'] = dataset['SibSp'] + dataset['Parch']
+    dataset.loc[dataset['relatives'] > 0, 'not_alone'] = 0
+    dataset.loc[dataset['relatives'] == 0, 'not_alone'] = 1
+    dataset['not_alone'] = dataset['not_alone'].astype(int)
+print(train_df['not_alone'].value_counts())
+
+
