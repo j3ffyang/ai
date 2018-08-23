@@ -1,13 +1,17 @@
-import matplotlib.pyplot as plt
+import os
+import numpy as np
+import pandas as pd
+from scipy.misc import imread
+from sklearn.metrics import accuracy_score
+import tensorflow as tf
 
-def plot_dirac(location, *args, **kwarge):
-    print(args)
-    print(kwarge)
-    plt.plot([location, location], [0,1], *args, **kwarge)
+seed = 128
+rng = np.random.RandomState(seed)
 
-plot_dirac(2)
-plt.hold(True)
-plot_dirac(3, linewidth=3)
-plot_dirac(-2, 'r--')
-plt.axis((-4, 4, 0, 2))
-plt.show()
+root_dir = os.path.abspath('/tmp')
+data_dir = os.path.join(root_dir, 'data')
+sub_dir = os.path.join(root_dir, 'sub')
+
+os.path.exists(root_dir)
+os.path.exists(data_dir)
+os.path.exists(sub_dir)
