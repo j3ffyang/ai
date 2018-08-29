@@ -1,20 +1,8 @@
-# import tensorflow
-import tensorflow as tf
+import matplotlib.pyplot as plt
+import numpy as np
 
-# build computational graph
-a = tf.placeholder(tf.int16)
-b = tf.placeholder(tf.int16)
+x = np.random.normal(size =1000)
+plt.hist(x, normed=True, bins=30)
+plt.ylabel('Probability');
 
-addition = tf.add(a, b)
-
-# initialize variables
-# init = tf.initialize_all_variables()
-init = tf.global_variables_initializer()
-
-# create session and run the graph
-with tf.Session() as sess:
-    sess.run(init)
-    print("Addition: %i" % sess.run(addition, feed_dict={a: 2, b: 3}))
-
-# close session
-sess.close()
+plt.show()
