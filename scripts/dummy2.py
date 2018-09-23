@@ -1,17 +1,11 @@
-import os
-import numpy as np
-import pandas as pd
-from scipy.misc import imread
-from sklearn.metrics import accuracy_score
-import tensorflow as tf
+from torch.autograd import Variable
+import torch
 
-seed = 128
-rng = np.random.RandomState(seed)
+x = Variable(torch.ones(2, 2) * 2, requires_grad = True)
+z = 2 * (x * x) + 5 * x
+z.backward(torch.ones(2, 2))
 
-root_dir = os.path.abspath('/tmp')
-data_dir = os.path.join(root_dir, 'data')
-sub_dir = os.path.join(root_dir, 'sub')
+# print(z)
+print(x)
+print(x.grad)
 
-os.path.exists(root_dir)
-os.path.exists(data_dir)
-os.path.exists(sub_dir)
