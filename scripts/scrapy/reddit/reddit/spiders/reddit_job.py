@@ -2,6 +2,7 @@
 import scrapy
 
 from reddit.items import RedditItem
+from scrapy.http.request import Request
 
 class RedditJobSpider(scrapy.Spider):
     name = 'reddit_job'
