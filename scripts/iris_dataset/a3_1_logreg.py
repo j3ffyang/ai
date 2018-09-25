@@ -12,10 +12,23 @@ iris = load_iris()
 X = iris.data
 y = iris.target
 
+from sklearn.neighbors import KNeighborsClassifier
+knn  = KNeighborsClassifier(n_neighbors=1)
+knn5 = KNeighborsClassifier(n_neighbors=5)
+knn8 = KNeighborsClassifier(n_neighbors=8)
+knn.fit(X,y)
+knn5.fit(X,y)
+knn8.fit(X,y)
+
 logisticreg = LogisticRegression()
 print(logisticreg.fit(X,y))
 
-prediction_lr = logisticreg.predict([[2,4,3,1], [4,6,5,3]])
+prediction = knn.predict([[5.1, 3.5, 1.4, 0.2], [6.3, 3.3, 4.7, 1.6]])
+print(prediction)
+
+prediction5 = knn5.predict([[5.1, 3.5, 1.4, 0.2], [6.3, 3.3, 4.7, 1.6]])
+print(prediction5)
+
+prediction_lr = logisticreg.predict([[5.1, 3.5, 1.4, 0.2], [6.3, 3.3, 4.7, 1.6]])
 print(prediction_lr)
 
-print(iris.target_names)
