@@ -31,4 +31,3 @@ print(prediction5)
 
 prediction_lr = logisticreg.predict([[5.1, 3.5, 1.4, 0.2], [6.3, 3.3, 4.7, 1.6]])
 print(prediction_lr)
-
