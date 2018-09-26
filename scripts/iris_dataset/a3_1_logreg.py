@@ -1,7 +1,7 @@
 # Logistic Regression
 
-from sklearn.linear_model import LogisticRegression
 from urllib.request import urlopen
+from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import load_iris
 
 lines = urlopen("https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data")
