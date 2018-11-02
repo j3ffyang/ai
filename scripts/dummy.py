@@ -1,8 +1,10 @@
-x_pos = 5
-mod_x_pos = 5 % 2
-floor_div_x_pos = x_pos // 2
-x_pos_squared = x_pos ** 2
+print(3 ** 3)
 
-print(mod_x_pos)
-print(floor_div_x_pos)
-print(x_pos_squared)
+print(10 / 4)
+print(10 // 4)
+
+print(20 / 7)
+print(20 // 7)
+
+print(1.75 % 0.5)
+print(1.75 / 0.5)
