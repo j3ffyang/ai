@@ -88,3 +88,7 @@ print(employee.Age.max())
 # group by
 print(employee.groupby('Position').Age.min())
 print(employee.groupby('Position').Age.agg(['count', 'min', 'max']))
+
+# Loc (choose a number of rows or columns)
+employee = pd.read_table('./tab_separated_values.tsv')
+print(employee.loc[0, :])
