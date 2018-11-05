@@ -92,3 +92,23 @@ print(employee.groupby('Position').Age.agg(['count', 'min', 'max']))
 # Loc (choose a number of rows or columns)
 employee = pd.read_table('./tab_separated_values.tsv')
 print(employee.loc[0, :])
+
+# row 0-2, all columns
+print(employee.loc[0:2, :])
+
+# row 0-2, 2 columns
+print(employee.loc[0:2, ['Name', 'Position']])
+
+# row 0-2, columns 0-3
+print(employee.loc[0:2, 'Name':'Office'])
+
+# rows with certain condition
+print(employee.loc[employee.Position == 'Accountant', :])
+
+# dropna. using missing value in tsv!!
+# drop rows with all missing values in every columns
+employee = pd.read_table('./tab_separated_values_missing_values.tsv')
+print(employee.dropna(how="any").shape)
+
+# drop rows with all missing values in certain columns
+print(employee.dropna(subset=['Name', 'Salary'], how='any').shape)
