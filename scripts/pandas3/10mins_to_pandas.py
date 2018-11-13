@@ -229,3 +229,59 @@ print(pd.pivot_table(df, values='D', index= ['A', 'B'], columns= ['C']))
 rng = pd.date_range('1/1/2012', periods= 100, freq= 'S')
 ts =  pd.Series(np.random.randint(0, 500, len(rng)), index= rng)
 print(ts.resample('5Min').sum())
+
+## time zone representation
+rng = pd.date_range('3/6/2012 00:00', periods= 5, freq= 'D')
+ts = pd.Series(np.random.randn(len(rng)), rng)
+print(ts)
+
+ts_utc = ts.tz_localize('UTC')
+print(ts_utc)
+
+## converting to another tiem zone
+print(ts_utc.tz_convert('US/Eastern'))
+
+## converting between time span representations
+rng = pd.date_range('1/1/2012', periods= 5, freq= 'M')
+ts = pd.Series(np.random.randn(len(rng)), index= rng)
+print(ts)
+
+ps = ts.to_period()
+print(ps)
+
+print(ps.to_timestamp())
+
+## Categorical
+df = pd.DataFrame({"id":[1,2,3,4,5,6], "raw_grade":['a','b','b','a','a','e']})
+
+## convert the raw grades to a categorical data type
+df["grade"] = df["raw_grade"].astype("category")
+print(df["grade"])
+
+## sort
+print(df.sort_values(by="grade"))
+
+
+## Plotting
+# import matplotlib.pyplot as plt
+ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))
+ts = ts.cumsum()
+plt.plot(ts)
+plt.show()
+
+## on a DataFrame, the plot() method is a convenience to plot all of the col w/ labels
+df = pd.DataFrame(np.random.randn(1000, 4), index=ts.index,
+                  columns= ['A', 'B', 'C', 'D'])
+df = df.cumsum()
+
+plt.figure(); plt.plot(df); plt.legend(loc = 'best')
+plt.show()
+
+## getting data in/ out
+## csv
+df.to_csv('foo.csv')
+print(pd.read_csv('foo.csv'))
+
+## excel
+print(df.to_excel('foo.xlsx', sheet_name='Sheet1'))
+print(pd.read_excel('foo.xlsx', 'Sheet1', index_col= None, na_values=['NA']))
