@@ -1,4 +1,4 @@
-# find the avg heights of the male and female students. The col we need are
+# find the avg heights of the male and female students. The col we need are 
 # 2nd and 4th, and there's no missing data in these cols so we can use no.loadtxtself.
 
 import numpy as np

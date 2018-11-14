@@ -1,7 +1,7 @@
 # the following code defines a two-dimensional array holding values of these
 # functions for L = 1 on a grid of N = 100 points (rows) for n = 1, 2, ..., 5
 # (columns). The position of the max and min in each col is calculated with
-# argmax(axis= 0) and argmin(axis= 0)
+# argmax(axis= 0) and argmin(axis= 0) 
 
 import numpy as np
 import pylab

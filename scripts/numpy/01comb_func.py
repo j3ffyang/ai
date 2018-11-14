@@ -1,4 +1,4 @@
-# https://scipython.com/book/chapter-6-numpy/examples/
+# https://scipython.com/book/chapter-6-numpy/examples/ 
 
 import numpy as np
 

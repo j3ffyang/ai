@@ -1,4 +1,4 @@
-# create an N x N magic square. N must be odd
+# create an N x N magic square. N must be odd 
 import numpy as np
 
 N = 5
