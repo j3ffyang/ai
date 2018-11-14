@@ -1,4 +1,4 @@
-# find the avg heights of the male and female students. The col we need are 
+# find the avg heights of the male and female students. The col we need are
 # 2nd and 4th, and there's no missing data in these cols so we can use no.loadtxtself.
 
 import numpy as np
@@ -25,3 +25,26 @@ f_av= a['height'][~m].mean()
 
 print('Male avg: {:.2f} m, Female avg: {:.2f} m'.format(m_av, f_av))
 print(m_av, f_av)
+
+# to performance student weights avg, we have a bit more work as there are some
+# missing values (denoted by ' - '). We could use np.genfromtxt, but write
+# a converter method instead. We'll replace the missing values with the nicely
+# unpysical value of -99. The func parse_weight expects a string arg and
+# return a fload
+
+def parse_weight(s):
+    try:
+        return float(s)
+    except ValueError:
+        return -99.
+
+dtype2= np.dtype([('gender', '|S1'), ('weight', 'f8')])
+b= np.loadtxt(fname, dtype= dtype2, skiprows= 9, usecols= (1, 4),
+              converters= {4: parse_weight})
+print(b)
+
+# mask off the invalid data and index the array with a boolean array as before
+mv= b['weight']> 0  # elements only True for valid data
+m_wav= b['weight'][mv & m].mean()   # valid and male
+f_wav= b['weight'][mv & ~m].mean()  # valid and female
+print('Male avg: {:.2f} kg, Female avg: {:.2f} kg'.format(m_wav, f_wav))
