@@ -1,4 +1,5 @@
 # pylab is module in patplotlib that get installed alongside matplotlib
+# https://www.udemy.com/the-top-5-machine-learning-libraries-in-python/
 import numpy as np 
 import pylab as pl 
 

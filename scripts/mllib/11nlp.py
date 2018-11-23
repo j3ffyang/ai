@@ -1,3 +1,4 @@
+# https://www.udemy.com/the-top-5-machine-learning-libraries-in-python/
 # let's tokenize some words 
 # from nltk.tokenize import word_tokenize
 from nltk import pos_tag, word_tokenize
