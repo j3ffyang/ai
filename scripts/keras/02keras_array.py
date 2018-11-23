@@ -5,8 +5,16 @@ from keras.layers import Dense
 import numpy as np 
 
 seed = 7
-numpy.random.seed(seed)
+np.random.seed(seed)
 
 from pandas import read_csv
 filename= 'BBC.csv'
 dataframe= read_csv(filename)
+
+array= dataframe.values
+
+x= array[:, 0:11]
+y= array[:, 11]
+
+print(x)
+print(y)
