@@ -1,4 +1,5 @@
 import pandas as pd 
+import matplotlib.pyplot as plt
 
 df= pd.read_csv('20181129_polution.csv', sep=',', header=None)
 print(df.values)
@@ -13,3 +14,6 @@ print(y)
 # z= df.loc[1:]
 z= df.values[1:, 1:]
 print(z)
+
+plt.plot(x, z)
+plt.show()
