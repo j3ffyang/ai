@@ -15,9 +15,7 @@ e= list(df.Sixteen_Thirty)
 f= list(df.Ninteen_Thirty)
 g= list(df.Twenty_One)
 
-print(list(df))
-
-fig= plt.figure()
+fig= plt.figure(figsize=(12, 4))    # fig's length, height
 
 plt.xlabel('Date')
 plt.ylabel('Level')
@@ -25,12 +23,15 @@ plt.title('Sugar Level Monitoring')
 plt.grid(True)
 
 plt.plot_date(time, a, 'b-', label="6am")
-# plt.plot_date(time, b, color='black')
-plt.plot_date(time, c, 'g-')
-plt.plot_date(time, d, color='orange')
-plt.plot_date(time, e, 'r-')
-plt.plot_date(time, f, 'y-')
-plt.plot_date(time, g, 'c-')
+# plt.plot_date(time, b, color='black', lebel="9am")
+plt.plot_date(time, c, 'g-', label="10:30am")
+# plt.plot_date(time, d, color='magenta', label="1:30pm")
+plt.plot_date(time, d, 'm-', label="1:30pm")
+plt.plot_date(time, e, 'r-', label="4:30pm")
+plt.plot_date(time, f, 'y-', label="7:30pm")
+plt.plot_date(time, g, 'c-', label="9pm")
+
+plt.legend(loc='upper left')    # label placement
 
 fig.autofmt_xdate()
 plt.show()
