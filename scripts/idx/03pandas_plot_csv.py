@@ -19,11 +19,13 @@ fig= plt.figure(figsize=(12, 4))    # fig's length, height
 
 plt.xlabel('Date')
 plt.ylabel('Level')
-plt.title('Sugar Level Monitoring')
+plt.title('Level Monitoring')
 plt.grid(True)
 
+# plt.gca().set_color_cycle(['blue', 'black', 'green', 'magenta', 'red', 'yellow', 'cyan'])
+
 plt.plot_date(time, a, 'b-', label="6am")
-# plt.plot_date(time, b, color='black', lebel="9am")
+# plt.plot_date(time, b, 'w-', lebel="9am")
 plt.plot_date(time, c, 'g-', label="10:30am")
 # plt.plot_date(time, d, color='magenta', label="1:30pm")
 plt.plot_date(time, d, 'm-', label="1:30pm")
