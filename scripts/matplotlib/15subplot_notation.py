@@ -6,7 +6,7 @@ rnd= np.random.randint(0, 10, size= (3, rng.size))
 yrs= 1950+ rng 
 
 fig, ax= plt.subplots(figsize= (5, 3))
-ax.stackplot(yrs, rng+ rnd, labels=['Estasia', 'Eurasia', 'Oceania'])
+ax.stackplot(yrs, rng+ rnd, labels=['Eastasia', 'Eurasia', 'Oceania'])
 ax.set_title('Combined debt growth over time')
 ax.legend(loc='upper left')
 ax.set_ylabel('Total debt')
