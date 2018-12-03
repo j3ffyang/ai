@@ -1,3 +1,5 @@
+# https://realpython.com/python-matplotlib-guide/
+
 import matplotlib.pyplot as plt 
 import numpy as np
 
