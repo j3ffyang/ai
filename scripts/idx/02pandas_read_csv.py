@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 df= pd.read_csv('20181129_polution.csv', sep=',', header=None)
 print(df.values)
+print("=-=-=-=-")
 
 x= df.values[0, 1:]
 print(x)
