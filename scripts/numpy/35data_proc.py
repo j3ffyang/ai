@@ -13,5 +13,10 @@ print(data[0:3, 3]) # first 3 rows and the 4th rows
 print(data[:, 2])   # entire 3rd col / column
 print(data[2, :])   # entire 3rd row
 
+data[1,2]= 10       # update value on row 2 and col 3 to 10
+data[:, 10]= 10     # override entire 11th col
 print(data)
+
+third_wine= data[3, :]  # 4th rows
+print(third_wine)
 
