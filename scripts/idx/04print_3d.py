@@ -1,21 +1,14 @@
 import pandas as pd 
-
-df= pd.read_csv('20181129_polution.csv', sep=',', header=None)
-print(df.values)
-
-x= df.values[0, 1:]
-y= df.values[1:, 0]
-z= df.values[1:, 1:]
-
-print(x.shape)
-print(y.shape)
-print(z.shape)
-
+import numpy as np
 from matplotlib import pyplot
-from mpl_toolkits.mplot3d import Axes3D
 
-fig= pyplot.figure()
-ax= Axes3D(fig)
+df= pd.read_csv('20181128_idx.csv', sep=',', header=None)
+# print(df.values)
 
-# ax.scatter(x, y, z)
-# pyplot.show()
+date= df.values[1:, 0]
+time= df.values[0, 1:]
+
+x= date+ time
+
+y= df.values[0, 1:]
+
