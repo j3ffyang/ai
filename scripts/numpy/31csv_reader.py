@@ -9,9 +9,9 @@ from numpy import genfromtxt
 # data= csv.reader(open("winequality-red.csv"), delimiter=";")
 # with open("winequality-red.csv", 'r') as data:
 
-data= csv.reader(open("winequality-red.csv"), delimiter=";")
-wine= list(data)
+with open("winequality-red.csv", 'r') as f:
+    wine= list(f)
 
-# print(wine[:3])   # first 3 lines
-print(wine[1:])
+print(wine[:3])   # first 3 lines
+# print(wine[1:])
 
