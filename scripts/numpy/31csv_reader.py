@@ -4,14 +4,12 @@ import numpy as np
 import csv
 from numpy import genfromtxt
 
-# data= genfromtxt('winequality-red.csv', delimiter=";")
-# data= np.loadtxt("winequality-red.csv", delimiter=";")
 # data= csv.reader(open("winequality-red.csv"), delimiter=";")
 # with open("winequality-red.csv", 'r') as data:
 
-with open("winequality-red.csv", 'r') as f:
-    wine= list(f)
+wine= genfromtxt('winequality-red.csv', dtype= float, delimiter=";", skip_header=1)
+# wine= genfromtxt('winequality-red.csv', dtype= float, delimiter=";", names=True)
 
-print(wine[:3])   # first 3 lines
+print(wine) # entire array
+# print(wine[:3])   # first 3 lines
 # print(wine[1:])
-
