@@ -8,7 +8,8 @@ df= pd.read_csv('20181128_idx.csv', sep=',', header=None)
 date= df.values[1:, 0]
 time= df.values[0, 1:]
 
-x= date+ time
+a= [list(x) for x in date]
+print(a)
 
 y= df.values[0, 1:]
 
