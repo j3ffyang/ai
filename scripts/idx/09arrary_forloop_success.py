@@ -16,7 +16,7 @@ print(date)
 data= arr[:, 1:][1:]    # get all from 2nd col (col1) and remove row0
 print(data)
 
-len= len(data)
-print(len)
-for i in range(len):
-     print(data[i])
+# len= len(data)
+# print(len)
+# for i in range(len):
+#      print(data[i])
