@@ -17,6 +17,9 @@ six0= (arr[1][1:])  # 1= the 2nd row in arr. 1:= from 2nd col to the end
 six= pd.to_numeric(six0)    # change datatype from string to num 
 print(six)          # all col of six
 
+# nine= pd.to_numeric(arr[2][1:])
+# print(nine)
+
 fig= plt.figure(figsize=(12, 4))
 plt.plot(x, six, marker='o')
 plt.show()

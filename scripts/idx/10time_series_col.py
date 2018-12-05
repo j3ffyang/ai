@@ -6,7 +6,7 @@ df= pd.read_csv('20181128_idx.csv', sep=',', header=None)
 
 # arr= df.T.values 
 arr= df.values.T
-# print(arr)
+print(arr)
 print(arr.shape)
 
 x0= (arr[0])        # date col, which is the 1st col
