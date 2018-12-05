@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 
 df= pd.read_csv('20181128_idx.csv', sep=',', header=None)
-# df= pd.read_csv('20181129_polution_simple.csv', sep=',', header=None)
 # data= np.genfromtxt("20181128_idx.csv", dtype=float, delimiter=',', skip_header=1)
 
 arr= df.values
@@ -33,7 +32,6 @@ plt.grid(True)
 plt.xlabel('Date')
 plt.ylabel('Level')
 plt.title('All Monitoring')
-# plt.plot(time, data, marker='o')
 ax.plot(time, data, linestyle='-', marker='o')
 ax.xaxis.set_major_locator(mticker.MultipleLocator(7))
 
