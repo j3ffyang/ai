@@ -25,9 +25,14 @@ time= []
 for i in time0:
     for j in range(len):
         time.append(i+ str(j))
-# print(time)
 
 fig= plt.figure(figsize=(16, 4))
-fig.autofmt_xdate()
+
+plt.xlabel('Date')
+plt.ylabel('Level')
+plt.title('All Monitoring')
 plt.plot(time, data, marker='o')
+
+# ax.xaxis_date()
+fig.autofmt_xdate()
 plt.show()
