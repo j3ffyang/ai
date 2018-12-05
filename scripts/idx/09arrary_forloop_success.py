@@ -24,9 +24,10 @@ time0= arr[:, 0][1:]    # get col0 then get col1 (row1 & col0 from original sour
 time= []
 for i in time0:
     for j in range(len):
+        # time.append(i)+ str.format(i)
         time.append(i)
 # print(time)
 
-fig= plt.figure(figsize=(12, 4))
+fig= plt.figure(figsize=(16, 4))
 plt.plot(time, data, marker='o')
 plt.show()
