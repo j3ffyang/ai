@@ -1,6 +1,7 @@
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot as plt 
+import matplotlib.ticker as mticker
 
 df= pd.read_csv('20181128_idx.csv', sep=',', header=None)
 # df= pd.read_csv('20181129_polution_simple.csv', sep=',', header=None)
@@ -16,8 +17,7 @@ print(data.shape)
 len= len(data[1])       # cause shape=[28,7], get len=2nd #
 print(len)
 
-data= data.ravel()      # multi dimension into single dimension
-print(data)
+data= data.ravel().astype(np.double)      # multi dimension into single dimension
 
 time0= arr[:, 0][1:]    # get col0 then get col1 (row1 & col0 from original source) & after
 
@@ -26,13 +26,16 @@ for i in time0:
     for j in range(len):
         time.append(i+ str(j))
 
-fig= plt.figure(figsize=(16, 4))
+# fig= plt.figure(figsize=(16, 4))
+fig, ax= plt.subplots(figsize=(16, 4))
 
+plt.grid(True)
 plt.xlabel('Date')
 plt.ylabel('Level')
 plt.title('All Monitoring')
-plt.plot(time, data, marker='o')
+# plt.plot(time, data, marker='o')
+ax.plot(time, data, linestyle='-', marker='o')
+ax.xaxis.set_major_locator(mticker.MultipleLocator(7))
 
-# ax.xaxis_date()
 fig.autofmt_xdate()
 plt.show()
