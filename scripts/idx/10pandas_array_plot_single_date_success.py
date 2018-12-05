@@ -1,5 +1,5 @@
 import pandas as pd 
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
 
 df= pd.read_csv('20181129_polution.csv', sep=',', header=None)
 # data= np.genfromtxt("20181128_idx.csv", dtype=float, delimiter=',', skip_header=1)
@@ -16,3 +16,7 @@ print(date)
 data= arr[:, 1:][1:]    # get all from 2nd col (col1) and remove row0
 print(data)
 
+len= len(data)
+print(len)
+for i in range(len):
+     print(data[i])
