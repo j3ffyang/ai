@@ -2,31 +2,30 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt 
 
-df= pd.read_csv('20181129_polution_simple.csv', sep=',', header=None)
+df= pd.read_csv('20181128_idx.csv', sep=',', header=None)
+# df= pd.read_csv('20181129_polution_simple.csv', sep=',', header=None)
 # data= np.genfromtxt("20181128_idx.csv", dtype=float, delimiter=',', skip_header=1)
 
-# arr= df.T.values 
-# arr= df.values.T 
 arr= df.values
 print(arr)
 print(arr.shape)
 
 data= arr[:, 1:][1:]    # get all from 2nd col (col1) and remove row0
-print(data)
+print(data.shape)
 
-len= len(data) 
+len= len(data[1])       # cause shape=[28,7], get len=2nd #
 print(len)
 
-time0= arr[:, 0][1:]     # get col0 then get col1 (row1 & col0 from original source) & after
-time= ((time0+ " ") * len) # repeat len(data) times to match 7 data cols 
-print(time)
+data= data.ravel()      # multi dimension into single dimension
+print(data)
+
+time0= arr[:, 0][1:]    # get col0 then get col1 (row1 & col0 from original source) & after
+
+time= []
+for i in time0:
+    for j in range(len):
+        time.append(i)
+# print(time)
 
 plt.plot(time, data)
 plt.show()
-
-# six= arr[:, 1:][1]    # only row1 (2nd)
-# print(six)
-
-# len= len(data)
-# for i in range(len):
-#      print(data[i])
