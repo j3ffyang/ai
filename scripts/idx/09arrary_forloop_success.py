@@ -27,5 +27,6 @@ for i in time0:
         time.append(i)
 # print(time)
 
-plt.plot(time, data)
+fig= plt.figure(figsize=(12, 4))
+plt.plot(time, data, marker='o')
 plt.show()
