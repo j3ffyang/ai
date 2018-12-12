@@ -21,6 +21,9 @@ knn.fit(X_train[['ApplicantIncome', 'CoapplicantIncome', 'LoanAmount',
     'Loan_Amount_Term', 'Credit_History']], Y_train.values.ravel())
 
 from sklearn.metrics import accuracy_score
-accuracy_score(Y_test, knn.predict(X_test[['ApplicantIncome', 
+result= accuracy_score(Y_test, knn.predict(X_test[['ApplicantIncome', 
     'CoapplicantIncome', 'LoanAmount', 'Loan_Amount_Term', 
     'Credit_History']]))
+
+# print(result)
+print(("Accuracy: %.3f%%") % (result* 100.0))
