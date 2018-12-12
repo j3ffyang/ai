@@ -1,3 +1,5 @@
+# https://www.udemy.com/a-gentle-introduction-to-machine-learning-using-scikit-learn/learn/v4/t/lecture/6759088?start=0
+
 from pandas import read_csv
 from numpy import set_printoptions 
 from sklearn.model_selection import train_test_split 
