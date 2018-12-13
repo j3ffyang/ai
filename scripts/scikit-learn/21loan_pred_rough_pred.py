@@ -19,6 +19,7 @@ from sklearn.neighbors import KNeighborsClassifier
 knn= KNeighborsClassifier(n_neighbors= 5)
 knn.fit(X_train[['ApplicantIncome', 'CoapplicantIncome', 'LoanAmount', 
     'Loan_Amount_Term', 'Credit_History']], Y_train.values.ravel())
+# use ravel() to correct shape challenge
 
 from sklearn.metrics import accuracy_score
 result= accuracy_score(Y_test, knn.predict(X_test[['ApplicantIncome', 
@@ -27,3 +28,9 @@ result= accuracy_score(Y_test, knn.predict(X_test[['ApplicantIncome',
 
 # print(result)
 print(("Accuracy: %.3f%%") % (result* 100.0))
+
+print('Loan_Status in train dataset. In result, 70% of approved loans')
+print(Y_train.Target.value_counts()/ Y_train.Target.count()) 
+
+print('Use the above train dataset to predict for "test"')
+print(Y_test.Target.value_counts()/ Y_test.Target.count())
