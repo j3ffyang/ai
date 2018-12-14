@@ -1,3 +1,5 @@
+# https://pythonprogramming.net/matplotlib-3d-scatterplot-tutorial/
+
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt 
 
