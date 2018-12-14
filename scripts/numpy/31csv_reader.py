@@ -11,5 +11,5 @@ wine= genfromtxt('winequality-red.csv', dtype= float, delimiter=";", skip_header
 # wine= genfromtxt('winequality-red.csv', dtype= float, delimiter=";", names=True)
 
 print(wine) # entire array
-# print(wine[:3])   # first 3 lines
+print(wine[:3])   # first 3 lines
 # print(wine[1:])
