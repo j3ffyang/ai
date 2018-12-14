@@ -19,4 +19,27 @@ url= 'iris.csv'
 names= ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 dataset= pandas.read_csv(url, names= names)
 
+# dimension of dataset
 print(dataset.shape)
+
+# peek at the data 
+print(dataset.head(20))
+
+# statistical sum 
+print(dataset.describe())
+
+# class distribution 
+print(dataset.groupby('class').size())
+
+# plot (plt) 
+dataset.plot(kind='box', subplots= True, layout=(2, 2), sharex= False, sharey= False)
+plt.show()
+
+# histograms 
+dataset.hist()
+plt.show()
+
+# multivariante plots
+# scatter plot matrix 
+scatter_matrix(dataset)
+plt.show()
