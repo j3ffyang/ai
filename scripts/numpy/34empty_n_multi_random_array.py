@@ -10,7 +10,7 @@ print(x)
 
 print("=-=-=-=-")
 
-y= np.random.rand(2,3,4,5)  # create an array in 4 dimensions
+y= np.random.rand(5, 4, 3)  # create an array in 4 dimensions
 print(y)
 print(y.shape)
 
