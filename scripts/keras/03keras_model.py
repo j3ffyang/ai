@@ -30,7 +30,8 @@ model.add(Dense(1, kernel_initializer='uniform', activation='sigmoid'))
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 # fit the model 
-model.fit(x, y, nb_epoch= 500, batch_size= 10)
+# model.fit(x, y, nb_epoch= 500, batch_size= 10)
+model.fit(x, y, nb_epoch= 50, batch_size= 10)
 
 # score the model 
 scores= model.evaluate(x, y)
