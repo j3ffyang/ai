@@ -279,9 +279,9 @@ plt.show()
 
 ## getting data in/ out
 ## csv
-df.to_csv('foo.csv')
-print(pd.read_csv('foo.csv'))
+df.to_csv('40pandas_in_10mins_foo.csv')
+print(pd.read_csv('40pandas_in_10mins_foo.csv'))
 
 ## excel
-print(df.to_excel('foo.xlsx', sheet_name='Sheet1'))
-print(pd.read_excel('foo.xlsx', 'Sheet1', index_col= None, na_values=['NA']))
+print(df.to_excel('40pandas_in_10mins_foo.xlsx', sheet_name='Sheet1'))
+print(pd.read_excel('40pandas_in_10mins_foo.xlsx', 'Sheet1', index_col= None, na_values=['NA']))
