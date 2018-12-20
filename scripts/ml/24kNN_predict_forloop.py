@@ -14,7 +14,7 @@ y= iris.target  # prediction datasets
 
 from sklearn.neighbors import KNeighborsClassifier
 
-for i in range(1, 31):
+for i in range(1, 31):  # usually n_neighbors=1, 5, 8 in practice
     knn= KNeighborsClassifier(n_neighbors= i)
     print(knn)
     knn.fit(X, y)
