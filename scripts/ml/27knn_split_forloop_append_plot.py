@@ -9,9 +9,8 @@ X, y= iris.data, iris.target
 # X_train, X_test, y_train, y_test= train_test_split(X, y, test_size= 0.3)
 X_train, X_test, y_train, y_test= train_test_split(X, y, test_size= 0.4, random_state= 4)
 
-from sklearn import metrics 
-
 # predict by kNN
+from sklearn import metrics 
 from sklearn.neighbors import KNeighborsClassifier
 
 a, b= [], []
