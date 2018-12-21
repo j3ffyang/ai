@@ -18,7 +18,6 @@ for i in range(1, 31):
     knn= KNeighborsClassifier(n_neighbors= i)
     knn.fit(X_train, y_train)
     y_pred= knn.predict(X_test)
-    multi_pred= [i, metrics.accuracy_score(y_test, y_pred)]
     a.append(i)
     b.append(metrics.accuracy_score(y_test, y_pred))
 
