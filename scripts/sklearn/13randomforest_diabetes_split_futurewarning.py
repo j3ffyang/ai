@@ -5,15 +5,15 @@ from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier 
 from sklearn.ensemble import RandomForestClassifier 
 
+import warnings
+warnings.filterwarnings("ignore", category= FutureWarning)
+
 filename= "pima_indians_diabetes.data"
 dataframe= read_csv(filename) 
 
 array= dataframe.values
 X= array[:, 0:8]
 Y= array[:, 8]
-
-# print(X)
-# print(Y)
 
 test_size= .30
 seed= 45
