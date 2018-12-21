@@ -4,7 +4,7 @@ import warnings
 warnings.filterwarnings("ignore", category= FutureWarning)
 
 iris= load_iris()
-print(iris.data)
+# print(iris.data)
 
 print(iris.feature_names)   # all col names
 print(iris.target_names)    # 3 predicted species in prediction col
