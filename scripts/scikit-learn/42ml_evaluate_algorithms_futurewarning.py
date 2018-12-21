@@ -16,6 +16,9 @@ from sklearn.svm import SVC
 
 from numpy import ndarray
 
+import warnings
+warnings.filterwarnings("ignore", category= FutureWarning)
+
 # url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv"
 url= 'iris.csv'
 names= ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
