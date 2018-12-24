@@ -19,6 +19,9 @@ print(len)
 data= data.ravel().astype(np.double)      # multi dimension into single dimension
 
 time0= arr[:, 0][1:]    # get col0 then get col1 (row1 & col0 from original source) & after
+print("<<<")
+print(time0)
+
 
 time= []
 for i in time0:
