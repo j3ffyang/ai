@@ -22,9 +22,12 @@ new_data= pd.Series(new_data).fillna(limit= 6, method= 'ffill')
 
 # fig= plt.figure(figsize= (16, 4))
 fig, ax= plt.subplots(figsize= (16, 4))
-
-ax.grid(False)
+ax.grid(True)
 ax.plot(new_time, new_data)
-# ax.locator_params(nbins= 40, axis= 'x')
 fig.autofmt_xdate()
+
+# reduce tick density to 1/7
+ax.set_xticks(new_time[::7])
+ax.set_xticklabels(new_time[::7])
+
 plt.show()
