@@ -4,11 +4,9 @@ import matplotlib.pyplot as plt
 
 df= pd.read_csv("20181128_idx.csv")
 print(df.values.shape)
-
-chk_len = (df.values.shape[1]- 1)   # how many times of check per day
-
+chk_len = (df.values.shape[1]- 1)   # how many times of check per day 
 data= df.values[:, 1:]  # all except 1st col (col0)
-time= df.values[:, 0]   # 1st col (col0)
+time= df.values[:, 0]   # 1st col (col0), which are dates
 
 new_time= []
 for i in time:                       
@@ -27,6 +25,7 @@ ax.plot(new_time, new_data)
 fig.autofmt_xdate()
 
 # reduce tick density to 1/7
+# ax.locator_params(nbins= 40, axis= 'new_time')
 ax.set_xticks(new_time[::7])
 ax.set_xticklabels(new_time[::7])
 
