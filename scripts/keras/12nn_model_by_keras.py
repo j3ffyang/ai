@@ -5,7 +5,7 @@ from keras.layers import Dense
 import numpy 
 
 # fix random seed for reproducibility 
-numpy.random.seed(7)
+# numpy.random.seed(7)
 
 # load pima indians dataset 
 dataset= numpy.loadtxt("pima-indians-diabetes.csv", delimiter= ",")
