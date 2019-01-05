@@ -77,5 +77,3 @@ for dataset in data:
     dataset.loc[dataset['relatives'] == 0, 'not_alone'] = 1
     dataset['not_alone'] = dataset['not_alone'].astype(int)
 print(train_df['not_alone'].value_counts())
-
-
