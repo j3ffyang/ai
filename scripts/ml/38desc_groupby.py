@@ -11,13 +11,8 @@ array= df.values
 x= array[:, 0:8]
 y= array[:, 8]
 
-label_encoder= LabelEncoder()
-input_classes= ['Havells', 'Philips', 'Syska', 'Eveready', 'Lloyd']
-label_encoder.fit(input_classes)
+print(df.describe())
+print(df.shape)
+print(df.head(10))
 
-for i, item in enumerate(label_encoder.classes_):
-    print(item, '-->', i)
-
-labels= ['Lloyd', 'Syska', 'Philips']
-label_encoder.transform(labels)
-print(label_encoder.inverse_transform(label_encoder.transform(labels)))
+print(df.groupby('quality').size())
