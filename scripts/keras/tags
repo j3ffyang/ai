@@ -1,0 +1,39 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+X	11load_dataset.py	/^X= dataset[:, 0:8]  # select col 0- 7, stop before col 8$/;"	v
+X	12nn_model_by_keras.py	/^X= dataset[:, 0:8]  # select col 0- 7, stop before col 8$/;"	v
+X	13nn_predict.py	/^X= dataset[:, 0:8]  # the first 7 cols before 8th $/;"	v
+X	21.py	/^X= dataset[:, 0:8]$/;"	v
+Y	11load_dataset.py	/^Y= dataset[:, 8]    # indicator of diabetes result$/;"	v
+Y	12nn_model_by_keras.py	/^Y= dataset[:, 8]$/;"	v
+Y	13nn_predict.py	/^Y= dataset[:, 8]    # the 8th col $/;"	v
+Y	21.py	/^Y= dataset[:, 8]$/;"	v
+array	02keras_array.py	/^array= dataframe.values$/;"	v
+array	03keras_model.py	/^array= dataframe.values$/;"	v
+dataframe	02keras_array.py	/^dataframe= read_csv(filename)$/;"	v
+dataframe	03keras_model.py	/^dataframe= read_csv(filename)$/;"	v
+dataset	11load_dataset.py	/^dataset= numpy.loadtxt("pima-indians-diabetes.csv", delimiter= ",")$/;"	v
+dataset	12nn_model_by_keras.py	/^dataset= numpy.loadtxt("pima-indians-diabetes.csv", delimiter= ",")$/;"	v
+dataset	13nn_predict.py	/^dataset= numpy.loadtxt("pima-indians-diabetes.csv", delimiter= ",")$/;"	v
+dataset	21.py	/^dataset= numpy.loadtxt("pima-indians-diabetes.csv", delimiter=",")$/;"	v
+filename	02keras_array.py	/^filename= 'BBC.csv'$/;"	v
+filename	03keras_model.py	/^filename= 'BBCN.csv'$/;"	v
+model	03keras_model.py	/^model= Sequential()$/;"	v
+model	12nn_model_by_keras.py	/^model= Sequential()$/;"	v
+model	13nn_predict.py	/^model= Sequential()$/;"	v
+predictions	13nn_predict.py	/^predictions= model.predict(X)$/;"	v
+rounded	13nn_predict.py	/^rounded= [round(x[0]) for x in predictions]$/;"	v
+scores	03keras_model.py	/^scores= model.evaluate(x, y)$/;"	v
+scores	12nn_model_by_keras.py	/^scores= model.evaluate(X, Y)$/;"	v
+scores	13nn_predict.py	/^scores= model.evaluate(X, Y)$/;"	v
+seed	02keras_array.py	/^seed = 7$/;"	v
+seed	03keras_model.py	/^seed= 9$/;"	v
+seed	13nn_predict.py	/^seed= 7$/;"	v
+x	02keras_array.py	/^x= array[:, 0:11]$/;"	v
+x	03keras_model.py	/^x= array[:, 0:11]$/;"	v
+y	02keras_array.py	/^y= array[:, 11]$/;"	v
+y	03keras_model.py	/^y= array[:, 11]$/;"	v
