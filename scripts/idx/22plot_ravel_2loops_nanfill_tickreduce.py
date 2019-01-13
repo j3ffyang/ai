@@ -26,7 +26,7 @@ fig.autofmt_xdate()
 
 # reduce tick density to 1/7
 # ax.locator_params(nbins= 40, axis= 'new_time')
-ax.set_xticks(new_time[::7])
-ax.set_xticklabels(new_time[::7])
+ax.set_xticks(new_time[::21])   # every 3 days. each day has 7 data
+# ax.set_xticklabels(new_time[::14])
 
 plt.show()
