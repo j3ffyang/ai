@@ -1,0 +1,11 @@
+**/*.pyc
+**/*.h5
+**/checkpoint
+**/*.meta
+**/*.index
+**/*.jpg
+**/.DS_Store
+**/*.npy
+my_test_model*.*
+vgg16.npy
+imgs.tgz
