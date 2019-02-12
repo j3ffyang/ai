@@ -6,3 +6,4 @@
 - [Bitwise eXclusiveOR (xor) of binary](./docs/20180801_bitwise_xor.md)
 - [Running my first Prediction with Clipper.ai and Docker](./docs/20180816_clipper.md)
 - [Adversarial Robustness Toolbox, Securing AI against Adversarial Threats](./docs/20180816_art.md)
+- [CNN-Classifier Image Recognition](./CNN-Classifier/README.md)
