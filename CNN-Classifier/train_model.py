@@ -250,12 +250,15 @@ def modelVGGNet16(train_set_path, test_set_path, learning_rate = 2e-3,
         return train_accuracy, test_accuracy, parameters
 
 def pretrained_vgg16_model(image_path, starter_learning_rate = 0.07,
-          num_epochs = 20, minibatch_size = 1, print_cost = True):
+          num_epochs = 10, minibatch_size = 1, print_cost = True):
     # load all image address into memory
     train_addrs, train_labels, test_addrs, test_labels = list_images_and_lables(image_path)
     # process train lables and test labels to np.array format
     train_labels = np.array(train_labels)
+    # shape[0] = qty of img
     train_labels = train_labels.reshape((1, train_labels.shape[0]))
+    # maintain dimensions. 2= 2 classifications = indoor + outdoor.
+    # T= matrix reshape
     Y_train = convert_to_one_hot(train_labels, 2).T
     test_labels = np.array(test_labels)
     test_labels = test_labels.reshape((1, test_labels.shape[0]))
@@ -263,8 +266,8 @@ def pretrained_vgg16_model(image_path, starter_learning_rate = 0.07,
     # X_train, Y_train, X_test, Y_test = get_datasets(train_set_path, test_set_path)
     ops.reset_default_graph()                         # to be able to rerun the model without overwriting tf variables
     # Fix me!! this code could just train VGG because the diamention is (224, 224, 3)
-    (m, n_H0, n_W0, n_C0) = (len(train_addrs), 224, 224, 3)
-    n_y = Y_train.shape[1]
+    (m, n_H0, n_W0, n_C0) = (len(train_addrs), 224, 224, 3) # length* width, 3= rgb
+    n_y = Y_train.shape[1]  # len of y_train
     costs = []                                        # To keep track of the cost
 
     X, Y = create_placeholders(n_H0, n_W0, n_C0, n_y)
@@ -275,10 +278,10 @@ def pretrained_vgg16_model(image_path, starter_learning_rate = 0.07,
         # load VGG16
         vgg.build(X)
 
-    # add own fully_connected layer
+    # add own fully_connected layer # add customized weight. vgg.prob= output
     fc = tf.contrib.layers.fully_connected(vgg.prob, 1024)
     # with tf.name_scope("final_fc"):
-    logits = tf.contrib.layers.fully_connected(fc, 2, activation_fn=None)
+    logits = tf.contrib.layers.fully_connected(fc, 2, activation_fn=None)   # 2= classification. possible output of 2= [0.1, 0.9], eg. 0.9 will be chosen
 
     cost = compute_cost(logits, Y)
     ### END CODE HERE ###
@@ -287,7 +290,7 @@ def pretrained_vgg16_model(image_path, starter_learning_rate = 0.07,
 
     learning_rate = tf.train.exponential_decay(starter_learning_rate, 200,
                                                10, 0.96, staircase=False)
-    optimizer = tf.train.AdamOptimizer(learning_rate = learning_rate).minimize(cost)
+    optimizer = tf.train.AdamOptimizer(learning_rate = learning_rate).minimize(cost)    # tf template optimization
 
     init = tf.global_variables_initializer()
 
@@ -371,4 +374,4 @@ def pretrained_vgg16_model(image_path, starter_learning_rate = 0.07,
 
 if __name__ == "__main__":
     # image_path = sys.argv[1]
-    pretrained_vgg16_model('/home/jeff/instguid.git/CNN-Classifier/create-dataset/images/*.jpg')
+    pretrained_vgg16_model('/home/jeff/instguid.git/ai/CNN-Classifier/create-dataset/images/*.jpg')

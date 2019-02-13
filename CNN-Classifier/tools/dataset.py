@@ -83,5 +83,6 @@ def load_dataset(train_set, test_set):
 
 
 def convert_to_one_hot(Y, C):
+    # tensorflow required to maintain dimensions of array
     Y = np.eye(C)[Y.reshape(-1)].T
     return Y

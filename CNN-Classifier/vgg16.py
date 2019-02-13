@@ -77,7 +77,7 @@ class Vgg16:
             conv = tf.nn.conv2d(bottom, filt, [1, 1, 1, 1], padding='SAME')
 
             conv_biases = self.get_bias(name)
-            tf.Variable(conv_biases, trainable=False)
+            tf.Variable(conv_biases, trainable=False)   # tf: use default weights
             bias = tf.nn.bias_add(conv, conv_biases)
 
             relu = tf.nn.relu(bias)
