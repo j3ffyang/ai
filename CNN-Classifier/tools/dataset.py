@@ -8,7 +8,7 @@ import h5py
 import cv2
 from random import shuffle
 
-def list_images_and_lables(images_path, keyword='in', shuffle_data = True):
+def list_images_and_lables(images_path, keyword='out', shuffle_data = True):
     """
     List images location and lables in the same dimensions.
 
@@ -30,9 +30,9 @@ def list_images_and_lables(images_path, keyword='in', shuffle_data = True):
     for i in range(len(addrs)):
         # fix me! use constants or parameters here! I will fix it later
         if keyword in addrs[i]:
-            labels.append(0)
-        else:
             labels.append(1)
+        else:
+            labels.append(0)
     # to shuffle data
     if shuffle_data:
         c = list(zip(addrs, labels))

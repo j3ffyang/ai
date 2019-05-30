@@ -250,13 +250,16 @@ def modelVGGNet16(train_set_path, test_set_path, learning_rate = 2e-3,
         return train_accuracy, test_accuracy, parameters
 
 def pretrained_vgg16_model(image_path, starter_learning_rate = 0.07,
-          num_epochs = 10, minibatch_size = 1, print_cost = True):
+          num_epochs = 10, minibatch_size = 2, print_cost = True):
     # load all image address into memory
     train_addrs, train_labels, test_addrs, test_labels = list_images_and_lables(image_path)
+    print(train_addrs)
+    print(train_labels)
     # process train lables and test labels to np.array format
     train_labels = np.array(train_labels)
     # shape[0] = qty of img
     train_labels = train_labels.reshape((1, train_labels.shape[0]))
+    print(train_labels)
     # maintain dimensions. 2= 2 classifications = indoor + outdoor.
     # T= matrix reshape
     Y_train = convert_to_one_hot(train_labels, 2).T
@@ -270,7 +273,7 @@ def pretrained_vgg16_model(image_path, starter_learning_rate = 0.07,
     n_y = Y_train.shape[1]  # len of y_train
     costs = []                                        # To keep track of the cost
 
-    X, Y = create_placeholders(n_H0, n_W0, n_C0, n_y)
+    X, Y = create_placeholders(n_H0, n_W0, n_C0, n_y)   # for tf
 
     # load pretrained vgg16 model
     vgg = vgg16.Vgg16()
