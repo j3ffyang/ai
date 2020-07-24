@@ -7,14 +7,16 @@ def get_input():
         print("Unknown verb {}".format(verb_word))
         return
 
-    if len(command)>=2:
+    if len(command) >= 2:
         noun_word = command[1]
         print(verb(noun_word))
     else:
         print(verb("nothing"))
 
+
 def say(noun):
     return 'You said "{}"'.format(noun)
+
 
 verb_dict = {
     "say": say,

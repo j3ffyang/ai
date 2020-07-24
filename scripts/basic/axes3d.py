@@ -13,7 +13,7 @@ z = 50 - x**2 - y**2
 
 # plot the surface
 # plot a basic wireframe
-surf = ax.plot_wireframe(x, y, z, rstride = 10, cstride = 10)
+surf = ax.plot_wireframe(x, y, z, rstride=10, cstride=10)
 
 ax.set_xlabel('X Label')
 ax.set_ylabel('Y Label')

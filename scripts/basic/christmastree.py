@@ -2,7 +2,7 @@
 
 from turtle import *
 
-brus= Turtle()
+brus = Turtle()
 brus.speed(10)
 brus.shape("triangle")
 bgcolor("black")
@@ -23,13 +23,13 @@ brus.penup()
 brus.goto(0, 300)
 brus.pendown()
 
-x= 10
-y= 270
+x = 10
+y = 270
 for c in range(14):
     brus.goto(-x, y)
-    brus.goto(x,y)
-    x= x+ 20
-    y= y- 20
+    brus.goto(x, y)
+    x = x + 20
+    y = y - 20
 
 brus.penup()
 brus.goto(0, -10)

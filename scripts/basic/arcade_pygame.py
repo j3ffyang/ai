@@ -39,5 +39,5 @@ arcade.draw_arc_outline(x, y, width, height, arcade.color.BLACK, start_angle, en
 # Finish drawing and display the result
 arcade.finish_render()
 
-#Keep the window open until the user hits the 'close' button
+# Keep the window open until the user hits the 'close' button
 arcade.run()
